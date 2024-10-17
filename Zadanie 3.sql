@@ -1,7 +1,7 @@
 SELECT 
   m."MarathonName",
   e."EventName",
-  to_char( (re."RaceTime" ||'seconds')::interval, 'HH24:MI:SS' ),
+  to_char( (re."RaceTime" ||'seconds')::interval, 'HH24:MI:SS') as "Time",
   RANK() OVER (PARTITION BY e."EventId" ORDER BY re."RaceTime" ASC) AS "Position",
   RANK() OVER (PARTITION BY e."EventId", g."GenderId" ORDER BY re."RaceTime" ASC) AS "PositionGender"
 FROM
