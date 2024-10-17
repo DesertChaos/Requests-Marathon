@@ -1,7 +1,7 @@
 SELECT 
     run."RunnerId",
     gen."Gender",
-    age(e."StartDateTime", run."DateOfBirth") AS "AgeDuringEvent",
+    extract(year from age(e."StartDateTime", run."DateOfBirth")) AS "AgeDuringEvent",
     e."EventId",
     e."StartDateTime",
     rer."RaceTime"
