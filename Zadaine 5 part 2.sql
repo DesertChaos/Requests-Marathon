@@ -20,8 +20,5 @@ select
 		join 
 			"RegistrationStatus" rgs on reg."RegistrationStatusId" = rgs."RegistrationStatusId"  
 		where 
-			ev."EventTypeId" = 'FM' and rgs."RegistrationStatusId" = 1 as asd
+			ev."EventTypeId" = 'FM' and rgs."RegistrationStatusId" = 1
 			) as "a"
-
-	
-		
